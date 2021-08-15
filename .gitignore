@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Simple Trading Bot & Tests
+simple_trading_bot/API_CREDENTIALS.json
