@@ -13,7 +13,7 @@ api_secret = API_CREDENTIALS['api_secret']
 
 
 # Settings
-lista_ativos = ["ADAUSDT", "SOLUSDT", "ETHUSDT", "LUNAUSDT", "FTMUSDT", "DOGEUSDT", "SHIBUSDT"]
+lista_ativos = ["ADAUSDT", "SOLUSDT", "ETHUSDT", "LUNAUSDT", "FTMUSDT", "AVAXUSDT", "HBARUSDT", "VETUSDT", "DOTUSDT"]
 perc_each_buy_cte = [0.5, 0.25, 0.25]
 
 binance = binanceInterface(api_key, api_secret)
