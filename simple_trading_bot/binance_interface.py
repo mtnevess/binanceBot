@@ -51,7 +51,13 @@ class binanceInterface:
 
     def get_last_ticker_perc_low(self, ativo):
 
-        last_candle = self.client.get_historical_klines(ativo, AsyncClient.KLINE_INTERVAL_1DAY, "1 day ago UTC")[0]
+        try:
+            last_candle = self.client.get_historical_klines(ativo, AsyncClient.KLINE_INTERVAL_1DAY, "1 day ago UTC")[0]
+        except:
+            time.sleep(30)
+            self.init_client()
+            last_candle = self.client.get_historical_klines(ativo, AsyncClient.KLINE_INTERVAL_1DAY, "1 day ago UTC")[0]
+            
         if last_candle[4] < last_candle[1]:
             low_perc_diff = (abs(float(last_candle[1]) - float(last_candle[4])) / float(last_candle[1])) * 100
         else:

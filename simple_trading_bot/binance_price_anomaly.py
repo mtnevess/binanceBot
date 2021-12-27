@@ -187,3 +187,5 @@ while running:
     
     binance.init_client()
 
+
+db.reference("{}/running/".format(script_fb_path)).set(True)
