@@ -115,6 +115,13 @@ while running:
             dict_buy_threshold[ativo]["end_buy_price"] = highest
             watchlist += [ativo]
 
+    try:
+        db.reference("{}/pontos_de_entrada/".format(script_fb_path)).set(dict_buy_threshold)
+    except:
+        time.sleep(30)
+        init_firebase()
+        db.reference("{}/pontos_de_entrada/".format(script_fb_path)).set(dict_buy_threshold)
+
     current_date = str(pd.Timestamp.utcnow())[0:10]
     time_to_enter_threshold = current_date + " 20"
     new_date = current_date
